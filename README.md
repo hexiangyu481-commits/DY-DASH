@@ -6,10 +6,10 @@ DY RaceLab Digital Instrument Simulator V0.1 — 面向 Honda Civic FD / R18A �
 
 ## 运行与展示
 
-- 在线演示：https://dy-dash.hexiangyu481.chatgpt.site
+- 在线演示：https://hexiangyu481-commits.github.io/DY-DASH/
 - 离线运行：保留 `index.html`、`style.css`、`script.js` 与 `assets/` 的相对位置，打开 `index.html`。
 - 默认 16:9 展示；可切换到 800×480 对应的 5:3 硬件比例。800×480 不是 16:9。
-- GitHub 仓库本身保存源码，不等同于已开通 GitHub Pages；在线演示独立托管。
+- 在线演示由 GitHub Pages 公开托管，访客无需登录；发布源为 `main` 分支根目录。
 
 ## 仪表模式
 
