@@ -1,0 +1,161 @@
+:root{color-scheme:dark;--page:#0d1013;--surface:#15191d;--line:#2c3339;--text:#f2f5f6;--muted:#839199;--accent:#dceeb2;--yellow:#ffc44d;--red:#ff4e4e;--mono:"Bahnschrift","DIN Alternate","Roboto Condensed","Arial Narrow",monospace;--sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}button,input,summary{touch-action:manipulation}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:4px}button{border:0}button:hover{filter:brightness(1.14)}button:active{transform:translateY(1px)}[hidden]{display:none!important}.workbench{max-width:1160px;margin:auto;padding:32px 36px 24px}.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}.identity{display:flex;align-items:center;gap:16px}.dy-mark{font-family:var(--mono);font-weight:900;letter-spacing:-4px;font-size:45px;font-style:italic}.dy-mark>span{color:var(--accent);margin-left:4px}h1{font-size:17px;letter-spacing:3px;margin:0 0 7px;font-weight:800}h1 span{font-size:10px;color:var(--muted);letter-spacing:2px;margin-left:8px}.identity p{font-family:var(--mono);font-size:10px;letter-spacing:1.3px;color:#b3bfc6;margin:0}.identity p>span{color:#626f78;margin-left:16px}.header-meta{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;color:#9ba7ae}.revision{border-left:1px solid #3c4348;padding-left:14px;margin-left:6px;color:#77838c}.live-dot{display:inline-block;width:6px;height:6px;flex-shrink:0;border-radius:100%;background:var(--accent);box-shadow:0 0 8px #dceeb22a}
+.cluster-shell{border:1px solid #343b41;border-radius:14px;background:#171b1f;box-shadow:0 18px 50px #0005;overflow:hidden}.cluster-toolbar{height:57px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #343b41}.mode-tabs{height:100%;display:flex;gap:16px}.mode-tabs button{background:transparent;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;padding:0 13px;color:#7c8991;position:relative}.mode-tabs button>span{font-size:9px;margin-right:9px;opacity:.65}.mode-tabs button[aria-selected="true"]{color:var(--accent)}.mode-tabs button[aria-selected="true"]:after{content:"";height:2px;background:var(--accent);position:absolute;bottom:0;left:12px;right:12px}.icon-button{width:32px;height:32px;background:#232a30;border:1px solid #343b41;border-radius:5px;color:#b8c2c8;font-size:21px;line-height:1}.screen-viewport{width:100%;aspect-ratio:16/9;background:#000;position:relative;overflow:hidden}.screen-viewport.hardware-ratio{aspect-ratio:5/3}.dash{--display-height:540px;--mode-accent:var(--accent);position:absolute;top:0;left:0;width:960px;height:var(--display-height);transform-origin:top left;background:#030506;overflow:hidden;font-family:var(--mono);color:#f7f9fa}.dash.hardware-ratio{--display-height:576px}.dash[data-mode="track"]{--mode-accent:#ec7470}.dash[data-mode="protect"]{--mode-accent:#bed8df}.dash-header{position:absolute;left:28px;right:28px;top:17px;height:26px;display:flex;align-items:center;justify-content:space-between}.dash-brand{font-style:italic;font-size:20px;font-weight:800;letter-spacing:-1px}.dash-brand b{font-size:16px;letter-spacing:2px;font-style:normal;margin-left:5px}.brand-slash{margin:0 16px;color:var(--mode-accent)}.engine-name{font-size:11px;letter-spacing:3px;color:#8c9ba4;font-style:normal;font-weight:500}.telemetry-status{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1px;color:#9aabb5}.sample-rate{padding-left:12px;margin-left:2px;border-left:1px solid #374047;color:#70818a}.shift-lights{display:flex;gap:6px;position:absolute;left:50%;transform:translateX(-50%)}.shift-light{width:20px;height:7px;border-radius:2px;background:#1c2726;transition:background .12s,box-shadow .12s}.shift-light.active{background:var(--mode-accent);box-shadow:0 0 10px #dceeb23b}.shift-light.amber.active{background:#ffc44d;box-shadow:0 0 10px #ffc44d45}.shift-light.red.active{background:#ff4e4e;box-shadow:0 0 10px #ff4e4e60}.shift-lights.shift-now .shift-light{animation:shift-blink .3s steps(2,end) infinite}
+.alert-strip{position:absolute;left:28px;right:28px;top:60px;height:34px;border-top:1px solid #243037;border-bottom:1px solid #243037;display:flex;align-items:center;gap:10px;color:#98ac9a;font-size:12px}.alert-strip>span:first-child{font-size:13px}.alert-strip strong{font-weight:500;font-size:11px;letter-spacing:1.6px}.alert-strip #alert-detail{font-family:var(--sans);font-size:11px;color:#7b8b92;margin-left:6px}.alert-level{margin-left:auto;font-size:10px;letter-spacing:1.4px;color:#7b8b92}.dash[data-severity="yellow"] .alert-strip{background:#ffc44d12;color:var(--yellow);border-color:#ffc44d59;padding:0 10px}.dash[data-severity="red"] .alert-strip,.dash[data-severity="critical"] .alert-strip{background:#ff4e4e19;color:var(--red);border-color:#ff4e4e80;padding:0 10px}.dash[data-severity="yellow"] #alert-detail,.dash[data-severity="yellow"] .alert-level{color:#e6c387}.dash[data-severity="red"] #alert-detail,.dash[data-severity="red"] .alert-level,.dash[data-severity="critical"] #alert-detail,.dash[data-severity="critical"] .alert-level{color:#f3aaa6}.dash[data-severity="critical"] .alert-strip{animation:warning-breathe 1.2s ease-in-out infinite}
+.instrument-view{position:absolute;left:28px;right:28px;top:103px;bottom:36px}.driving-main{height:286px;position:relative;display:grid;grid-template-columns:520px 1fr;gap:30px}.rpm-gauge{position:relative;width:520px;height:286px}.tachometer{position:absolute;left:62px;top:-2px;width:404px;height:305px;overflow:visible}.tachometer .track{fill:none;stroke:#182229;stroke-width:12}.tachometer .red-zone{fill:none;stroke:#a04443;stroke-width:12;opacity:.7}.tachometer .progress{fill:none;stroke:var(--mode-accent);stroke-width:12;stroke-linecap:butt}.tachometer .tick{stroke:#51616a;stroke-width:1.5}.tachometer .tick-major{stroke:#b6c1c6;stroke-width:2}.tachometer text{fill:#899ba7;font-size:15px;font-family:var(--mono);text-anchor:middle;dominant-baseline:middle}.tachometer text.red-label{fill:#dc7774}.tachometer .needle{stroke:#eef4ee;stroke-width:2;filter:drop-shadow(0 0 4px #fff5)}.rpm-center{position:absolute;left:74px;top:86px;width:380px;text-align:center}.measurement-label{font-size:11px;font-weight:400;letter-spacing:3px;color:#9fadb7;margin:0 0 6px}.rpm-value{font-size:90px;font-weight:600;line-height:1;letter-spacing:-4px;font-variant-numeric:tabular-nums}.rpm-unit{font-size:13px;letter-spacing:3px;color:var(--mode-accent);margin-top:5px}.rpm-subtitle{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:21px;font-size:10px;letter-spacing:2px;color:#7e909a}.rpm-subtitle:before{content:"";width:20px;height:1px;background:var(--mode-accent)}.rpm-side-label{position:absolute;left:0;top:115px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:3px;color:#627681}.rpm-bar{position:absolute;left:159px;right:81px;bottom:1px;height:4px;background:#182229;overflow:hidden}.rpm-bar span{display:block;width:0%;height:100%;background:var(--mode-accent)}.speed-gauge{position:relative;padding:38px 0 0 37px;border-left:1px solid #1f2a31;margin:25px 0 28px}.speed-label{font-size:11px;letter-spacing:3px;color:#93a4b0}.speed-number{font-size:111px;line-height:1;font-weight:600;letter-spacing:-5px;margin-top:8px;font-variant-numeric:tabular-nums}.speed-unit{font-size:17px;color:#8ca0ad;letter-spacing:2px;margin-left:5px;margin-top:4px}.drive-state{display:flex;align-items:center;gap:10px;margin-top:21px}.gear-box{display:flex;align-items:baseline;gap:10px;font-size:10px;letter-spacing:1.4px;color:#7f929e}.gear-box b{color:#d6e0e5;font-size:24px;font-weight:500}.drive-state .state-separator{height:17px;width:1px;background:#374249;margin:0 4px}.drive-state .state-text{font-size:10px;letter-spacing:1.4px;color:#97a8b3}.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;position:absolute;left:0;right:0;bottom:0;height:110px}.metric-card{--card-color:#eef3f5;background:#0c1216;border:1px solid #26323a;border-radius:4px;padding:14px 17px;position:relative;overflow:hidden}.metric-top{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#a1b0bb;font-size:12px;font-family:var(--sans)}.metric-abbr{color:#647782;font-family:var(--mono);font-size:9px;letter-spacing:1.5px}.metric-reading{display:flex;align-items:baseline;gap:7px;margin-top:9px;color:var(--card-color)}.metric-number{font-size:41px;font-weight:500;line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums}.metric-unit{font-size:14px;color:#8b9ca6}.metric-track{position:absolute;bottom:0;left:0;right:0;height:3px;background:#26323a}.metric-track>span{display:block;height:100%;width:0;background:#788f99}.metric-card[data-severity="yellow"]{--card-color:var(--yellow);background:#201a0e;border-color:#ffc44d96}.metric-card[data-severity="red"],.metric-card[data-severity="critical"]{--card-color:var(--red);background:#251010;border-color:#ff4e4e}.metric-card[data-severity="yellow"] .metric-track>span{background:var(--yellow)}.metric-card[data-severity="red"] .metric-track>span,.metric-card[data-severity="critical"] .metric-track>span{background:var(--red)}.metric-card[data-severity="critical"]{animation:warning-breathe 1.2s ease-in-out infinite}.metric-card[data-severity="yellow"] .metric-unit,.metric-card[data-severity="red"] .metric-unit,.metric-card[data-severity="critical"] .metric-unit{color:var(--card-color)}.card-warning{font-size:11px;color:var(--card-color);position:absolute;right:14px;bottom:18px;font-weight:700}.track-metrics{grid-template-columns:1.25fr 1.25fr .9fr .9fr}.track-metrics .priority{border-top:2px solid #b95856;background:#121517}.track-metrics .priority .metric-number{font-size:44px}.track-metrics .priority[data-severity="yellow"]{background:#201a0e;border-color:#ffc44d96}.track-metrics .priority[data-severity="red"],.track-metrics .priority[data-severity="critical"]{background:#251010;border-color:#ff4e4e}.dash-footer{position:absolute;left:28px;right:28px;bottom:12px;font-size:9px;letter-spacing:1.6px;color:#62757f;display:flex;align-items:center;justify-content:space-between}.dash-footer>span:first-child{display:flex;align-items:center;gap:6px}.sim-square{width:5px;height:5px;background:#62757f;display:inline-block}.dash-footer #clock{font-variant-numeric:tabular-nums}
+.health-heading{display:flex;align-items:center;justify-content:space-between;height:66px}.health-heading h2{font-size:20px;letter-spacing:3px;font-weight:500;margin:0 0 6px}.health-heading p{font-family:var(--sans);font-size:11px;color:#81959f;margin:0}.health-state{font-size:12px;letter-spacing:2px;display:flex;align-items:center;gap:8px;color:#b1c9b9}.health-dot{height:7px;width:7px;background:currentColor;border-radius:50%}.protect-metrics{display:grid;grid-template-columns:1.08fr 1.08fr 1fr;gap:12px;position:absolute;top:74px;left:0;right:0;bottom:0}.protect-metrics .metric-card{padding:23px 22px}.protect-metrics .metric-top{font-size:17px}.protect-metrics .metric-abbr{font-size:11px}.protect-metrics .metric-reading{flex-direction:column;gap:14px;margin-top:29px}.protect-metrics .metric-number{font-size:82px;letter-spacing:-3px}.protect-metrics .metric-unit{font-size:19px;letter-spacing:1px}.protect-metrics .card-warning{bottom:72px;right:23px;font-size:13px;letter-spacing:1px}.protect-metrics .metric-track{bottom:61px;left:22px;right:22px;height:5px;border-radius:1px}.metric-limit{position:absolute;left:22px;right:22px;bottom:24px;font-size:11px;letter-spacing:1px;color:#82959f;display:flex;justify-content:space-between}.limit-label{font-family:var(--sans);font-size:10px}.dash[data-severity="yellow"] .health-state{color:var(--yellow)}.dash[data-severity="red"] .health-state,.dash[data-severity="critical"] .health-state{color:var(--red)}
+.device-caption{display:flex;justify-content:space-between;padding:12px 21px;font-family:var(--mono);font-size:9px;letter-spacing:1.8px;color:#75858f}.device-caption b{font-weight:400;margin:0 8px;color:#b2c594}.simulation-panel{margin-top:24px;padding:21px 24px;background:#14181c;border:1px solid #2b3339;border-radius:11px}.panel-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.eyebrow{font-family:var(--mono);font-size:8px;letter-spacing:2px;color:#71828d}h2{font-size:15px;font-weight:500;margin:6px 0 0;letter-spacing:1px}.playback{display:flex;gap:6px}.playback button{background:#1d2429;border:1px solid #343e46;border-radius:5px;padding:7px 12px;font-size:11px;color:#a3b0b9;min-width:67px}.scenario-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.scenario-button{text-align:left;background:#1b2228;border:1px solid #303b43;border-radius:6px;position:relative;height:91px;padding:15px 13px;transition:border-color .2s,background .2s}.scenario-icon{position:absolute;left:13px;top:12px;color:#95a6b1;font-family:var(--mono);font-size:19px;line-height:1}.scenario-button strong{display:block;font-size:12px;font-weight:500;margin-top:25px}.scenario-button small{display:block;font-family:var(--mono);font-size:7px;letter-spacing:1.3px;color:#788d9a;margin-top:6px}.scenario-index{position:absolute;right:12px;top:13px;font-family:var(--mono);font-size:9px;color:#61717c}.scenario-button.selected{border-color:#c8ddaa;background:#242e23}.scenario-button.selected .scenario-icon,.scenario-button.selected .scenario-index{color:var(--accent)}.scenario-button.selected strong{color:#e4eecf}.scenario-button.selected.fault{border-color:#e78577;background:#30221f}.scenario-button.selected.fault .scenario-icon{color:#ed9689}.next-mode{background:#191e22}.control-options{display:flex;align-items:center;gap:22px;margin-top:18px}.control-options label{display:flex;align-items:center;gap:6px;font-size:10px;color:#9caab2;cursor:pointer}input[type="checkbox"]{accent-color:#b8ce9d;width:13px;height:13px;margin:0}.key-hint{margin-left:auto;color:#5f727f;font-size:9px;white-space:nowrap}kbd{font-family:var(--mono);border:1px solid #37444d;border-radius:3px;padding:1px 3px;font-size:9px;margin-left:6px}.manual-panel{border-top:1px solid #303a42;margin-top:18px;padding-top:14px}summary{display:flex;gap:12px;align-items:center;cursor:pointer;font-size:11px;color:#b4c2c9;list-style:none}summary::-webkit-details-marker{display:none}summary>span{font-size:10px;color:#6d808c}.summary-plus{margin-left:auto;font-size:17px}.manual-panel[open] .summary-plus{transform:rotate(45deg)}.sliders{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:21px}.sliders label{font-size:11px;color:#bcc8ce;display:block}.sliders output{float:right;font-family:var(--mono);color:#d5e5bd;font-size:11px}.sliders input{display:block;width:100%;margin:15px 0 0;accent-color:var(--accent);cursor:ew-resize}.manual-panel p{font-size:10px;color:#83959f;line-height:1.7;margin:15px 0 0}.page-footer{display:flex;justify-content:space-between;align-items:flex-start;margin-top:22px;gap:16px;font-size:9px;color:#667985;line-height:1.8;letter-spacing:1px}.page-footer b{font-weight:400;color:#8698a2;font-size:10px;letter-spacing:1.5px}.page-footer p{margin:0;font-size:9px;letter-spacing:0;text-align:right}
+.cluster-shell:fullscreen{border:0;border-radius:0;width:100vw;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#000}.cluster-shell:fullscreen .screen-viewport{width:min(100vw,calc((100vh - 57px) * 16 / 9));flex-shrink:0}.cluster-shell:fullscreen .screen-viewport.hardware-ratio{width:min(100vw,calc((100vh - 57px) * 5 / 3))}.cluster-shell:fullscreen .cluster-toolbar{width:100%;flex-shrink:0}.cluster-shell:fullscreen .device-caption{display:none}.dash.paused .live-dot{background:#79868d}.dash.paused .telemetry-status{color:#8b969b}
+@keyframes warning-breathe{0%,100%{box-shadow:inset 0 0 0 1px #ff4e4e14,inset 0 0 20px #ff4e4e05}50%{box-shadow:inset 0 0 0 2px #ff4e4e88,inset 0 0 44px #ff4e4e47}}
+.metric-card .card-warning{top:14px;bottom:auto}.metric-card:not([data-severity="normal"]) .metric-abbr{visibility:hidden}.protect-metrics .metric-card .card-warning{top:23px;bottom:auto}
+@keyframes shift-blink{50%{opacity:.22}}
+.screen-viewport{height:0;padding-bottom:56.25%;aspect-ratio:auto}.screen-viewport.hardware-ratio{padding-bottom:60%;aspect-ratio:auto}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.metric-card[data-severity="critical"]{box-shadow:inset 0 0 0 2px #ff4e4e88}.dash[data-severity="critical"] .alert-strip{background:#5d1717}}
+@media(max-width:900px){.workbench{padding:22px 20px}.identity p>span{display:none}.header-meta .revision{display:none}.key-hint{display:none}.control-options{justify-content:space-between;gap:10px}.mode-tabs{gap:5px}.mode-tabs button{padding:0 10px}}
+@media(max-width:600px){.workbench{padding:18px 10px}.page-header{margin-bottom:18px}.dy-mark{font-size:34px;letter-spacing:-3px}.identity{gap:10px}h1{font-size:14px}h1 span{font-size:8px;margin-left:0;display:block;margin-top:4px}.identity p{font-size:8px}.header-meta{font-size:7px;letter-spacing:.4px}.cluster-shell{border-radius:9px}.cluster-toolbar{height:48px;padding:0 9px}.mode-tabs button{font-size:10px;padding:0 6px;letter-spacing:.6px}.mode-tabs button>span{font-size:8px;margin-right:5px}.device-caption{font-size:7px;letter-spacing:.4px;padding:10px}.simulation-panel{padding:17px 13px}.scenario-grid{grid-template-columns:repeat(2,1fr)}.scenario-button{height:78px}.scenario-button strong{margin-top:22px}.scenario-button.next-mode{grid-column:1/-1;height:54px;padding-left:45px}.next-mode .scenario-icon{top:17px}.next-mode strong{margin-top:0}.next-mode small{margin-top:5px}.next-mode .scenario-index{top:22px}.scenario-button small{font-size:8px}.control-options{flex-wrap:wrap;gap:12px}.sliders{grid-template-columns:repeat(2,1fr);gap:20px}.page-footer{flex-direction:column;gap:9px}.page-footer p{text-align:left}.icon-button{font-size:19px}}
+
+/* DY RaceLab — Honda Civic FD instrument identity. */
+:root{--accent:#f25450}
+.brand-logo{width:145px;height:60px;object-fit:contain;flex-shrink:0}
+.identity{gap:20px}.identity h1{font-size:22px;letter-spacing:3px}
+.identity h1 span{display:block;margin:5px 0 0;font-size:9px;letter-spacing:2.4px}
+.identity p{margin-top:10px}.identity p>span{color:#839098}
+.manufacturer{display:flex;align-items:center;gap:13px;color:#f25450}
+.honda-badge{width:39px;height:34px}.manufacturer strong{font-family:Georgia,serif;font-weight:900;font-size:19px;letter-spacing:2px}
+.manufacturer span{display:block;text-align:center;font-family:var(--mono);font-size:8px;color:#94a1a9;letter-spacing:2px;margin-top:5px}
+.cluster-shell{border-top:2px solid #e6423e}
+.dash{--mode-accent:#f0f3f5}.dash[data-mode="track"]{--mode-accent:#f16a62}.dash[data-mode="protect"]{--mode-accent:#e4edf0}
+.dash-brand{display:flex;align-items:center;gap:13px;font-style:normal}.dash-brand b{margin:0;font-size:17px;letter-spacing:2px}
+.dash-logo{width:89px;height:36px;object-fit:contain}.honda-wordmark{font-family:Georgia,serif;font-size:15px;font-weight:900;letter-spacing:1px;color:#ee514b;margin-right:12px}
+.live-dot{background:#e5edef;box-shadow:none}.shift-light.active{background:#edf0f3;box-shadow:0 0 10px #edf0f32a}
+.rpm-side-label{color:#ce5b55;letter-spacing:2.5px;font-size:11px}.tachometer .red-zone{stroke:#e1443e;opacity:.9}
+.tachometer text.red-label{fill:#fb6b60}.tachometer .tick-major{stroke:#d4dce1}
+.metric-unit{font-size:24px;font-weight:500;color:#b3c1cc;letter-spacing:.2px}
+.protect-metrics .metric-unit{font-size:30px;font-weight:500;color:#c9d3da}
+.metric-reading{gap:9px}.speed-unit{font-size:28px;color:#b5c3ce}.rpm-unit{font-size:22px;letter-spacing:3px;margin-top:6px}
+.rpm-subtitle{margin-top:12px}.drive-state{margin-top:14px}
+.track-metrics .priority{border-top-color:#ea5149}.track-metrics .priority .metric-unit{font-size:26px}
+.scenario-button.selected{border-color:#ef625a;background:#30211f}.scenario-button.selected strong{color:#f9edeb}
+.scenario-button.selected .scenario-icon,.scenario-button.selected .scenario-index{color:#f4786d}
+.sliders output{color:#edf1f4}input[type="checkbox"]{accent-color:#ed5a53}
+.device-caption b{color:#f46b62}.page-footer p{color:#8999a3}
+@media(max-width:600px){.brand-logo{width:96px;height:43px}.identity{gap:11px}.identity h1{font-size:18px}.identity h1 span{font-size:7px;letter-spacing:1.1px}.identity p{font-size:8px;margin-top:7px}.manufacturer{gap:7px}.honda-badge{width:26px;height:26px}.manufacturer strong{font-size:12px;letter-spacing:.9px}.manufacturer span{font-size:6px;letter-spacing:1px}}
+
+/* Instrument layout revision: STREET / TRACK / PROTECT. */
+.workbench{max-width:1220px;padding:32px 34px 25px}
+.page-header{margin-bottom:23px}.identity{gap:24px}
+.identity h1{font-family:var(--mono);font-size:25px;letter-spacing:4px}
+.identity h1 span{letter-spacing:3px;color:#94a2ad}.identity p{letter-spacing:1.6px}
+.cluster-shell{background:#111519;border:1px solid #31383e;border-top:2px solid #e74940;border-radius:12px;box-shadow:0 28px 80px #0006}
+.cluster-toolbar{height:56px;padding:0 20px}.mode-tabs{gap:25px}
+.mode-tabs button{font-size:12px;font-weight:600;letter-spacing:2px;color:#84929b}
+.mode-tabs button[aria-selected="true"]{color:#f3f5f7}
+.mode-tabs button[aria-selected="true"]:after{height:3px;background:#ed564c}
+.dash{--mode-accent:#eff4f7;background:#020405}
+.dash[data-mode="track"]{--mode-accent:#edf3f6}
+.dash-header{left:24px;right:24px;top:17px;height:27px}
+.dash-brand{gap:14px}.dash-logo{width:84px;height:34px}
+.dash-brand b{font-size:17px;font-weight:750;letter-spacing:2px}
+.honda-wordmark{font-size:16px;color:#f1584e}
+.shift-light{width:22px;height:8px;border-radius:1px;background:#1b242b}
+.shift-callout{position:absolute;left:50%;top:-2px;transform:translateX(-50%);width:277px;height:32px;z-index:20;text-align:center;line-height:32px;background:#ec3c31;color:#fff;font-size:21px;letter-spacing:5px;font-weight:900}
+.shift-callout span{margin-left:9px}.dash.shift-flash .shift-lights{visibility:hidden}
+.alert-strip{left:24px;right:24px;top:59px;padding:0 9px;border-color:#293039}
+.alert-strip strong{letter-spacing:2px}.alert-level{letter-spacing:2px}
+.instrument-view{left:24px;right:24px;top:106px;bottom:35px}
+
+/* STREET keeps a circular tach and gives the gear a separate frame. */
+.street-main{position:relative;display:grid;grid-template-columns:480px 1fr;gap:20px;height:266px}
+.rpm-gauge{width:480px;height:266px}
+.tachometer{left:68px;top:-8px;width:344px;height:264px}
+.tachometer .track{stroke:#1d2931}.tachometer .tick{stroke:#4b5e6c}
+.tachometer .tick-major{stroke:#cbd7df}.tachometer text{fill:#8ea2af;font-size:16px}
+.tachometer text.red-label{fill:#f5685c}.tachometer .needle{stroke:#ff5547;stroke-width:3;filter:none}
+.rpm-center{left:56px;top:66px;width:370px}
+.measurement-label{font-size:11px;letter-spacing:2.3px;color:#96aab7;margin-bottom:6px}
+.rpm-value{font-size:89px;font-weight:650;letter-spacing:-4px}
+.rpm-unit{font-size:24px;color:#b9c8d2;letter-spacing:2px;margin-top:4px;line-height:1.1}
+.rpm-subtitle{font-size:10px;letter-spacing:1.8px;color:#839aa9;margin-top:12px}
+.rpm-subtitle:before{height:2px;background:#e85245}
+.rpm-side-label{left:4px;top:79px;color:#dd6256;font-size:10px;letter-spacing:2.3px}
+.rpm-bar{left:132px;right:130px;bottom:4px;height:4px;background:#22323e}
+.rpm-bar>span{background:#e5f0f7}
+.speed-gauge{position:relative;border-left-color:#23333d;padding:35px 0 0 27px;margin:16px 0 0}
+.speed-readout{width:238px}.speed-number{font-size:112px;font-weight:650}
+.speed-unit{font-size:29px;line-height:1.1;color:#b7cad6;margin:6px 0 0}
+.drive-state{margin-top:19px}.state-text{font-size:10px;color:#95aab9;letter-spacing:1.7px}
+.gear-box{display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid #d3dfe6;background:#0d1419;border-radius:4px;color:#f6f9fb;gap:5px}
+.gear-box>span{font-size:12px;line-height:1.1;letter-spacing:3px;color:#aabcc7}
+.gear-box>b{font-size:98px;font-weight:800;letter-spacing:-3px;line-height:1;font-variant-numeric:tabular-nums;color:#f6f9fb}
+.street-gear{position:absolute;right:3px;top:42px;width:121px;height:148px}
+.dash.shift-flash .gear-box{border-color:#ff6755;background:#40100b;box-shadow:0 0 22px #ff46344a}
+
+/* Health cards use one strong reading line and large units. */
+.metric-row{height:119px}.metric-card{background:#0c1217;border-color:#2b3b46;padding:15px 16px}
+.metric-top{font-size:14px;color:#bbc9d2}.metric-abbr{color:#6c8391}
+.metric-reading{gap:9px;margin-top:12px}.metric-number{font-size:47px;font-weight:600}
+.metric-unit{font-size:26px;font-weight:500;line-height:1;color:#a9bfce}
+.metric-track{background:#263744}.metric-track>span{background:#819aaa}
+.metric-card .card-warning{top:16px;right:14px}
+
+/* TRACK: linear RPM strip, central WRC-style gear, balanced speed/RPM. */
+.track-tach{position:absolute;left:0;right:0;top:0;height:50px}
+.tach-scale{display:flex;justify-content:space-between;padding:0 2px;font-size:13px;color:#849cac}
+.tach-scale>span:last-child{color:#fb6554}
+.track-rpm-bar{left:0;right:0;top:23px;bottom:auto;height:20px;border:1px solid #3d5261;background:#15222c;transform:skewX(-12deg);margin:0 3px}
+.track-rpm-bar>span{background:repeating-linear-gradient(90deg,#dbeaf4 0,#dbeaf4 20px,#0c141a 20px,#0c141a 23px)}
+.bar-red-zone{position:absolute;top:0;right:0;bottom:0;width:7.142857%;background:#ef4536b3;border-left:2px solid #f47665}
+.track-performance{position:absolute;left:0;right:0;top:61px;height:209px;display:grid;grid-template-columns:1fr 228px 1fr;gap:24px;align-items:center}
+.track-rpm{padding-left:7px}.track-rpm .rpm-value{font-size:104px;letter-spacing:-5px}
+.track-rpm .rpm-unit{font-size:26px}.track-rpm .rpm-subtitle{justify-content:flex-start;margin-top:14px}
+.track-gear-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.track-gear{height:177px;width:168px;border-width:4px;gap:0;border-radius:3px}
+.track-gear>span{font-size:12px}.track-gear>b{font-size:132px;letter-spacing:-5px}
+.gear-caption{color:#839ba9;font-size:9px;letter-spacing:2.5px}
+.track-speed{text-align:right;padding-right:7px}.track-speed .speed-number{font-size:112px}
+.track-speed .speed-unit{font-size:29px}.track-speed .state-text{margin-top:14px}
+.track-metrics{height:117px;grid-template-columns:1.2fr 1.2fr .9fr .9fr}
+.track-metrics .priority{background:#121719;border-top:3px solid #ec5c4b}
+.track-metrics .priority .metric-number{font-size:52px}.track-metrics .metric-reading{margin-top:11px}
+.track-metrics .priority .metric-unit{font-size:26px}
+
+/* PROTECT: three large engine readings with extra room for oil pressure. */
+.health-heading{height:47px}.health-heading h2{font-size:22px;font-weight:600;letter-spacing:3px}
+.protect-metrics{top:62px;grid-template-columns:1.15fr 1fr .95fr;gap:12px}
+.protect-metrics .metric-card{padding:23px;border-top:3px solid #668295}
+.protect-metrics .metric-card:first-child{border-top-color:#ee6654}
+.protect-metrics .metric-top{font-size:19px}.protect-metrics .metric-reading{align-items:flex-start;margin-top:28px;gap:14px}
+.protect-metrics .metric-number{font-size:96px;font-weight:650;letter-spacing:-4px}
+.protect-metrics .metric-card:first-child .metric-number{font-size:104px}
+.protect-metrics .metric-unit{font-size:32px}
+.protect-metrics .metric-track{left:23px;right:23px;bottom:65px;height:5px}
+.protect-metrics .metric-card .card-warning{top:28px;right:23px;font-size:12px}
+.metric-limit{left:23px;right:23px;bottom:26px;align-items:center;color:#8ba4b3;font-size:12px;letter-spacing:.6px}
+.dash-footer{left:24px;right:24px;color:#657e8e;letter-spacing:1.5px}
+
+/* Entire display flashes red at the configured shift threshold. */
+.dash.shift-flash:after{content:"";position:absolute;inset:0;z-index:12;pointer-events:none;background:#ff302b;mix-blend-mode:screen;opacity:0;border:6px solid #ff352e;animation:shift-screen-flash .4s steps(1,end) infinite}
+.dash.shift-flash .shift-callout{z-index:20}
+@keyframes shift-screen-flash{0%,49%{opacity:.36}50%,100%{opacity:0}}
+.simulation-panel{background:#11171c;border-color:#2b3740}.scenario-button{background:#17222a;border-color:#344551}
+.scenario-button small{color:#8ea6b5}.scenario-button.selected{border-color:#ed6b55;background:#30221d}
+.page-footer{color:#7b92a0}.page-footer b{color:#a7bac6}
+@media(prefers-reduced-motion:reduce){.dash.shift-flash:after{animation:none!important;opacity:.32}}
+@media(max-width:900px){.workbench{padding:24px 18px}}
+@media(max-width:600px){.workbench{padding:17px 10px}.identity{gap:11px}.identity h1{font-size:19px;letter-spacing:2.3px}.identity h1 span{font-size:7px;letter-spacing:1px}.brand-logo{width:91px;height:42px}.cluster-toolbar{height:48px;padding:0 8px}.mode-tabs{gap:4px}.mode-tabs button{font-size:10px;padding:0 6px;letter-spacing:1px}.mode-tabs button>span{font-size:8px;margin-right:6px}.simulation-panel{padding:17px 13px}}
+.protect-metrics .metric-card[data-severity="yellow"]{border-color:var(--yellow)}
+.protect-metrics .metric-card[data-severity="red"],.protect-metrics .metric-card[data-severity="critical"]{border-color:var(--red)}
+
+/* Two different thresholds: user-requested colour, then a shift attention cue. */
+.dash.rpm-high .rpm-value,.dash.rpm-high .rpm-unit{color:#ff4e4e}
+.dash.rpm-high .tachometer .progress{stroke:#ff4e4e}
+.dash.rpm-high .rpm-bar>span{background:#ff4e4e}
+.dash.rpm-high .track-rpm-bar>span{background:repeating-linear-gradient(90deg,#ff4e4e 0,#ff4e4e 20px,#140d0d 20px,#140d0d 23px)}
+.bar-red-zone{width:2.857143%}
+.dash[data-drive-state="REV MATCH"] .gear-box{border-color:#ffd05a}
+.dash[data-drive-state="REV MATCH"] .state-text{color:#ffd05a}
+/* True full-display colour inversion: red alternates with its cyan complement. */
+.dash.shift-flash{animation:shift-negative-flash .65s steps(1,end) infinite}
+.dash.shift-flash:after{animation:none;opacity:.22;background:#ff302b;mix-blend-mode:screen}
+@keyframes shift-negative-flash{0%,49%{filter:none}50%,100%{filter:invert(1)}}
+@media(prefers-reduced-motion:reduce){.dash.shift-flash{animation:none!important;filter:invert(1)}.dash.shift-flash:after{animation:none!important;opacity:.22}}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>DY DASH | RaceLab · Honda Civic FD</title>
+  <meta name="description" content="DY RaceLab 数字仪表，专为 Honda Civic FD R18A 展示。日常、赛道和发动机保护三种模式。">
+  <link rel="icon" type="image/png" href="assets/dy-racelab.png">
+  <link rel="stylesheet" href="style.css?v=dy-drive-4">
+  <script src="script.js?v=dy-drive-4" defer></script>
+</head>
+<body>
+  <main class="workbench">
+    <header class="page-header">
+      <div class="identity"><img class="brand-logo" src="assets/dy-racelab.png" alt="DY RaceLab" width="145" height="60"><div><h1>DY DASH <span>DIGITAL INSTRUMENT</span></h1><p>CIVIC FD · R18A <span>STREET / TRACK / PROTECT</span></p></div></div>
+      <div class="manufacturer"><svg class="honda-badge" viewBox="0 0 48 40" aria-hidden="true"><path d="M9 3Q24 0 39 3L43 34Q24 39 5 34Z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 7L15 32H20L21 22H27L28 32H33L36 7H30L28 17H20L18 7Z" fill="currentColor"/></svg><div><strong>HONDA</strong><span>CIVIC · FD</span></div></div>
+    </header>
+
+    <section class="cluster-shell" aria-label="汽车数字仪表">
+      <div class="cluster-toolbar">
+        <div class="mode-tabs" role="tablist" aria-label="仪表模式">
+          <button type="button" role="tab" aria-selected="true" aria-controls="view-street" id="tab-street" data-mode="street"><span>01</span> STREET</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="view-track" id="tab-track" data-mode="track" tabindex="-1"><span>02</span> TRACK</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="view-protect" id="tab-protect" data-mode="protect" tabindex="-1"><span>03</span> PROTECT</button>
+        </div>
+        <button type="button" class="icon-button" id="fullscreen" title="全屏仪表" aria-label="全屏仪表">⛶</button>
+      </div>
+      <div class="screen-viewport" id="screen-viewport">
+        <div class="dash" id="dash" data-mode="street" data-severity="normal">
+          <header class="dash-header">
+            <div class="dash-brand"><img class="dash-logo" src="assets/dy-racelab.png" alt="DY RaceLab"><b>DY DASH</b></div>
+            <div class="shift-lights" id="shift-lights" aria-label="换挡提示灯"></div>
+            <div class="shift-callout" id="shift-callout" hidden aria-label="换挡提示">SHIFT <span>↑</span></div>
+            <div class="telemetry-status"><span class="honda-wordmark">HONDA</span><span class="live-dot"></span><span id="run-state">LIVE</span></div>
+          </header>
+          <div class="alert-strip" id="alert-strip" role="status" aria-live="polite" aria-atomic="true"><span id="alert-icon">✓</span><strong id="alert-title">ENGINE NORMAL</strong><span id="alert-detail">发动机状态正常</span><span class="alert-level" id="alert-level">ALL CLEAR</span></div>
+          <div id="view-street" class="instrument-view" role="tabpanel" aria-labelledby="tab-street"></div>
+          <div id="view-track" class="instrument-view" role="tabpanel" aria-labelledby="tab-track" hidden></div>
+          <div id="view-protect" class="instrument-view protect-view" role="tabpanel" aria-labelledby="tab-protect" hidden></div>
+          <footer class="dash-footer"><span>DY RACELAB · CIVIC FD / R18A</span><span id="scenario-caption">NORMAL DRIVE</span><span id="clock">00:00:00</span></footer>
+        </div>
+      </div>
+      <div class="device-caption"><span>HONDA CIVIC FD <b>/</b> ENGINE R18A</span><span id="resolution-caption">16:9 · DIGITAL INSTRUMENT</span></div>
+    </section>
+
+    <section class="simulation-panel" aria-label="驾驶场景演示">
+      <div class="panel-heading"><div><span class="eyebrow">DRIVING SCENARIOS</span><h2>驾驶演示</h2></div><div class="playback"><button type="button" id="pause" aria-pressed="false">Ⅱ 暂停</button><button type="button" id="reset">↺ 重置</button></div></div>
+      <div class="scenario-grid" role="group" aria-label="驾驶场景">
+        <button type="button" class="scenario-button selected" data-scenario="normal" aria-pressed="true"><span class="scenario-icon">↗</span><strong>正常驾驶</strong><small>NORMAL DRIVE</small><span class="scenario-index">01</span></button>
+        <button type="button" class="scenario-button" data-scenario="spirited" aria-pressed="false"><span class="scenario-icon">≫</span><strong>激烈驾驶</strong><small>TRACK RUN</small><span class="scenario-index">02</span></button>
+        <button type="button" class="scenario-button fault" data-scenario="oilDrop" aria-pressed="false"><span class="scenario-icon">↘</span><strong>油压下降</strong><small>PRESSURE LOSS</small><span class="scenario-index">03</span></button>
+        <button type="button" class="scenario-button fault" data-scenario="hotOil" aria-pressed="false"><span class="scenario-icon">♨</span><strong>高油温</strong><small>OIL OVERHEAT</small><span class="scenario-index">04</span></button>
+        <button type="button" class="scenario-button next-mode" id="next-mode"><span class="scenario-icon">⇄</span><strong>切换模式</strong><small id="next-mode-label">NEXT: TRACK</small><span class="scenario-index">05</span></button>
+      </div>
+      <div class="control-options"><label><input type="checkbox" id="auto-protect" checked><span>严重故障自动进入 PROTECT</span></label><label><input type="checkbox" id="hardware-ratio"><span>800 × 480 硬件比例</span></label><span class="key-hint"><kbd>M</kbd> 模式 <kbd>1–4</kbd> 场景 <kbd>Space</kbd> 暂停</span></div>
+      <details class="manual-panel" id="manual-panel"><summary>自定义场景 <span>3500 转变红 · 6500 换挡提示 · 6800 红线</span><span class="summary-plus">＋</span></summary><div class="sliders">
+        <label>转速 <output id="manual-rpm-output" for="manual-rpm">2400 rpm</output><input id="manual-rpm" type="range" min="800" max="7000" step="50" value="2400" data-parameter="rpm"></label>
+        <label>油压 <output id="manual-oilPressure-output" for="manual-oilPressure">4.5 bar</output><input id="manual-oilPressure" type="range" min="1.5" max="5.5" step="0.1" value="4.5" data-parameter="oilPressure"></label>
+        <label>油温 <output id="manual-oilTemp-output" for="manual-oilTemp">95 °C</output><input id="manual-oilTemp" type="range" min="90" max="130" step="1" value="95" data-parameter="oilTemp"></label>
+        <label>水温 <output id="manual-coolant-output" for="manual-coolant">92 °C</output><input id="manual-coolant" type="range" min="80" max="125" step="1" value="92" data-parameter="coolant"></label>
+      </div><p>拖动滑块调整参数，选择驾驶场景恢复自动演示。</p></details>
+    </section>
+    <footer class="page-footer"><span>DY RACELAB / DIGITAL INSTRUMENTS<br><b>日常可读，赛道专注，异常优先。</b></span><p>HONDA CIVIC FD · R18A<br>驾驶场景与预警效果演示</p></footer>
+  </main>
+</body>
+</html>
